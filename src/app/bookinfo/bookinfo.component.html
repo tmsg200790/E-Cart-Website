@@ -1,0 +1,60 @@
+<section class="bg-success px-5 py-5">
+
+    <h1 class="text-center">Book Data Form </h1>
+
+    <form  [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="bookData">
+            <div class="form-group">
+                <label for="bookname">Book Name</label>
+                <input type="text" id="bookname" class="form-control" formControlName="bookname" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="bookid">Book ID</label>
+                <input type="number" id="bookid" class="form-control" formControlName="bookid" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="bookauthor">Book Author</label>
+                <input type="text" id="bookauthor" class="form-control" formControlName="bookauthor" required>
+            </div>
+        </div>
+    </form>
+    
+    <ul class="mt-4">
+        <li><button class="btn btn-info" type="submit" (click)="onSubmit()">Submit</button></li>
+        <li> <button class="btn btn-Warning  bg-warning" type="button" (click)="setDefaultValue()">Set Default</button>
+        </li>
+        <li> <button class="btn btn-Warning  bg-warning" type="button" (click)="onAddBook()">Add Book</button>
+        <li>
+        </li>
+        <li> <button class="btn btn-Warning  bg-warning" type="button" (click)="onSendBook()">Send Book</button>
+        <li>
+        <li> <button class="btn btn-Warning  bg-danger"  (click)="onReset()">Reset</button></li>
+        <li> <button class="btn btn-Warning  bg-danger"  (click)="onGetBook()">Get Book</button></li>
+    </ul>
+    
+    
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>BOOK NAME</th>
+                    <th>BOOK ID</th>
+                    <th> AUTHOR </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books;index as i">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ book.bookname }}</td>
+                    <td>{{ book.bookid }}</td>
+                    <td>{{ book.bookauthor }}</td>
+    
+                </tr>
+            </tbody>
+    
+        </table>
+    </section>
+</section>

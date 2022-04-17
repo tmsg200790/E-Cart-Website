@@ -1,0 +1,110 @@
+<!-- <div class="container">
+    <div class="row">
+        <h2 class="text-center bg-warning">Kevells T-Shirts</h2>
+        <div class="col-4 mt-5" *ngFor="let product of this._dataTransfer.products;index as i;">
+            <ul class="list-group">
+                <li class="list-group-item  justify-content-center"><img src="{{ product.image }}" width="300"
+                        height="300"> </li>
+                <li class="list-group-item text-center">{{ product.category }}</li>
+                <li class="list-group-item text-center">Order Id : {{ product.id }}</li>
+                <li class="list-group-item text-center">Price : {{ product.price |currency:"INR":"₹"}}</li>
+                <li class="list-group-item mx-auto"><button class="btn btn-primary" (click)="this._dataTransfer.onAddCart(product)">Add to
+                        Cart</button> </li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <h1 class="text-center bg-warning">Kevells Kids</h1>
+    <div class="row">
+            <ng-container *ngFor="let product of this._dataTransfer.products;index as i;">
+                <ul class="list-group mt-2 col-lg-4 col-md-6 col-sm-12" *ngIf="product.gender=='male'">
+                    <li class="list-group-item  justify-content-center"><img src="{{ product.image }}" width="300"
+                            height="300"></li>
+                    <li class="list-group-item text-center">{{ product.category }}</li>
+                    <li class="list-group-item text-center">Order Id : {{ product.id }}</li>
+                    <li class="list-group-item text-center">Price : {{ product.price |currency:"INR":"₹"}}</li>
+                    <li class="list-group-item mx-auto"><button class="btn btn-primary"
+                            (click)="onAddCart(product)">Add to
+                            Cart</button></li>
+                </ul>
+            </ng-container>
+
+    </div>
+   
+                
+        
+</div>
+
+
+<section>
+    <mat-paginator [length]="25" [pageSizeOptions]="[1, 5, 10]" aria-label="Select page">
+    </mat-paginator>
+</section>
+
+
+<!-- <ng-template [ngIf]="isAddCart">
+    <section>
+        <h1 class="text-center bg-warning">Items on cart</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mt-5">
+                <thead>
+                    <tr>
+                        <th class="text-center">S.No</th>
+                        <th class="text-start">ORDERED ITEM</th>
+                        <th class="text-center">ORDERED ID</th>
+
+
+                        <th class="text-center">QUANTITY </th>
+                        <th class="text-center">PRICE</th>
+                        <th class="text-center">REMOVE ITEM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of cart;index as i;">
+                        <td class="text-center align-middle">{{ i+1 }}</td>
+                        <td class="mx-auto align-middle"><img src="{{ product.image }}" width="100" height="100"></td>
+                        <td class="text-center align-middle">{{ product.id }}</td>
+
+                        <td class="text-center align-middle">
+                            <i class="fa-solid fa-square-minus" (click)='minusQty(product.id)'></i>
+                            {{ product.qty }}
+                            <i class="fa-solid fa-square-plus" (click)='plusQty(product.id)'></i>
+                        </td>
+                        <td class="text-center align-middle">{{ product.price * product.qty |currency:"INR":"₹" }} </td>
+                        <td class="text-center align-middle fs-1 text-danger">
+
+                            <i class="fa-solid fa-circle-xmark" (click)="itemRemoved(product)"></i>
+                        </td>
+                    <tr>
+
+                        <td colspan='5' class="text-center">Total</td>
+                        <td class="text-center">{{ grandTotal() |currency:"INR":"₹"}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan='5' class="text-center">Discount(10%)</td>
+
+                        <td class="text-center">{{ -grandTotal() *0.1 |currency:"INR":"₹"}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan='5' class="text-center">GST(18%)</td>
+
+                        <td class="text-center">{{ grandTotal()*0.18*0.90 |currency:"INR":"₹"}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan='5' class="text-center">Grand Total</td>
+
+                        <td class="text-center">{{ grandTotal() *0.9*1.18 |currency:"INR":"₹"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="proceedtopay">
+            <button class="btn btn-success my-5" (click)="productToBillings() "> Proceed To Pay</button>
+        </div>
+    </section>
+</ng-template> -->
+
+
+<!-- Edit Here -->

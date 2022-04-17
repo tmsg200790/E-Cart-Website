@@ -1,0 +1,103 @@
+{
+  "kevellcartBills": [
+    {
+      "id": 36238967907625350,
+      "billDate": "03/04/2022",
+      "billTime": "10:37:29 AM",
+      "billtotal": 30900,
+      "billdiscount": -3090,
+      "billgst": 5005.8,
+      "billgrand": 32815.8
+    },
+    {
+      "id": 45412518621056890,
+      "billDate": "03/04/2022",
+      "billTime": "10:39:05 AM",
+      "billtotal": 4800,
+      "billdiscount": -480,
+      "billgst": 777.6,
+      "billgrand": 5097.6
+    },
+    {
+      "id": 93441012844555060,
+      "billDate": "03/04/2022",
+      "billTime": "8:49:35 PM",
+      "billtotal": 900,
+      "billdiscount": -90,
+      "billgst": 145.8,
+      "billgrand": 955.8000000000001
+    },
+    {
+      "id": 18279672380409130,
+      "billDate": "03/04/2022",
+      "billTime": "9:05:49 PM",
+      "billtotal": 22900,
+      "billdiscount": -2290,
+      "billgst": 3709.8,
+      "billgrand": 24319.800000000003
+    },
+    {
+      "id": 56425232415240200,
+      "billDate": "03/04/2022",
+      "billTime": "9:07:49 PM",
+      "billtotal": 7400,
+      "billdiscount": -740,
+      "billgst": 1198.8,
+      "billgrand": 7858.8
+    },
+    {
+      "id": 49317116987200470,
+      "billDate": "03/04/2022",
+      "billTime": "9:22:29 PM",
+      "billtotal": 8400,
+      "billdiscount": -840,
+      "billgst": 1360.8,
+      "billgrand": 8920.800000000001
+    },
+    {
+      "id": 93573779141348720,
+      "billDate": "03/04/2022",
+      "billTime": "9:22:42 PM",
+      "billtotal": 5400,
+      "billdiscount": -540,
+      "billgst": 874.8000000000001,
+      "billgrand": 5734.8
+    },
+    {
+      "id": 88315845642372910,
+      "billDate": "03/04/2022",
+      "billTime": "9:29:47 PM",
+      "billtotal": 500,
+      "billdiscount": -50,
+      "billgst": 81,
+      "billgrand": 531
+    },
+    {
+      "id": 2845493866668480.5,
+      "billDate": "03/04/2022",
+      "billTime": "9:29:54 PM",
+      "billtotal": 5000,
+      "billdiscount": -500,
+      "billgst": 810,
+      "billgrand": 5310
+    },
+    {
+      "id": 47079596478024136,
+      "billDate": "03/04/2022",
+      "billTime": "9:30:10 PM",
+      "billtotal": 10500,
+      "billdiscount": -1050,
+      "billgst": 1701,
+      "billgrand": 11151
+    },
+    {
+      "id": 83590926830708600,
+      "billDate": "17/04/2022",
+      "billTime": "3:42:59 PM",
+      "billtotal": 10900,
+      "billdiscount": -1090,
+      "billgst": 1765.8,
+      "billgrand": 11575.800000000001
+    }
+  ]
+}

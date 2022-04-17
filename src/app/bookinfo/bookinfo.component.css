@@ -1,0 +1,10 @@
+table  thead  tr th {width:200px; border : 1px solid black;text-align: center;}
+table  tbody  tr td {width:200px;border : 1px solid black;text-align: center;}
+
+
+ul li { list-style-type: none;display: inline-block;margin-left: 15px;}
+
+.form-control.ng-touched.ng-invalid{
+  
+    background-color: red;
+}

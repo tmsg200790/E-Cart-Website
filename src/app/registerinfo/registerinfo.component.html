@@ -1,0 +1,28 @@
+<section class="bg-success px-5 py-5">
+    <h1 class="text-center">Registration Form </h1>
+
+    <form  [formGroup]="regForm" (ngSubmit)="onRegister()">
+        <div formGroupName="regData">
+            <div class="form-group">
+                <label for="regmail">Email</label>
+                <input type="mail" id="regmail" class="form-control" formControlName="regmail" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="regpassword">Password</label>
+                <input type="password" id="regpassword" class="form-control" formControlName="regpassword" required>
+            </div>
+    
+        </div>
+        <button class="btn btn-info mt-4" type="submit">Register</button>
+    </form>
+    
+    
+       
+        
+</section>
+
+
+
+
+

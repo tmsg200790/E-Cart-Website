@@ -1,0 +1,31 @@
+<section class="bg-success px-5 py-5">
+
+    <h1 class="text-center">Login Form </h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div formGroupName="loginData">
+            <div class="form-group">
+                <label for="loginmail">Email</label>
+                <input type="mail" id="loginmail" class="form-control" formControlName="loginmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loginpassword">Password</label>
+                <input type="password" id="loginpassword" class="form-control" formControlName="loginpassword" required>
+            </div>
+
+        </div>
+        <button class="btn btn-info mt-4" type="submit">Login</button>
+    </form>
+
+</section>
+
+
+<!-- <section [ngIf]="this._auth.isEnableLogout==true">
+    <ul class="list-group">
+        <li class="list-group-item">Kevell Cart Says </li>
+        <li class="list-group-item">Thank You ! Visit Again!!!</li>
+        <li class="list-group-item">Kevell Cart Say</li>
+        <button class="btn btn-success" (click)="onLogout()">Ok</button>
+    </ul>
+</section> -->

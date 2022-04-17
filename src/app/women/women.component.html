@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="text-center bg-warning">Kevells Kids</h1>
+    <div class="row">
+        
+            <ng-container *ngFor="let product of this._dataTransfer.products;index as i;">
+                <ul class="list-group mt-2 col-lg-4 col-md-6 col-sm-12" *ngIf="product.gender=='female'">
+                    <li class="list-group-item  justify-content-center"><img src="{{ product.image }}" width="300"
+                            height="300"></li>
+                    <li class="list-group-item text-center">{{ product.category }}</li>
+                    <li class="list-group-item text-center">Order Id : {{ product.id }}</li>
+                    <li class="list-group-item text-center">Price : {{ product.price |currency:"INR":"₹"}}</li>
+                    <li class="list-group-item mx-auto"><button class="btn btn-primary"
+                            (click)="onAddCart(product)">Add to
+                            Cart</button></li>
+                </ul>
+            </ng-container>
+      
+    </div>
+   
+                
+        
+</div>
+
+
+<section>
+    <mat-paginator [length]="25" [pageSizeOptions]="[1, 5, 10]" aria-label="Select page">
+    </mat-paginator>
+</section>

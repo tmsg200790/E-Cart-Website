@@ -1,0 +1,126 @@
+<div class="container">
+    <ng-template [ngIf]="this._dataTransfer.isAddCart===true">
+        <section>
+            <h1 class="text-center bg-warning">Items on cart</h1>
+            <div class="table-responsive">
+                <table class="table table-success  table-striped table-hover ">
+                    <thead>
+                        <tr>
+                            <th class="text-center">S.No</th>
+                            <th class="text-start">ORDER ITEM</th>
+                            <th class="text-center">ORDER ID</th>
+                            <th class="text-center">QUANTITY </th>
+                            <th class="text-center">PRICE</th>
+                            <th class="text-center">REMOVE ITEM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of this._dataTransfer.cart;index as i;">
+                            <td class="text-center align-middle">{{ i+1 }}</td>
+                            <td class="mx-auto align-middle"><img src="{{ product.image }}" width="100" height="100">
+                            </td>
+                            <td class="text-center align-middle">{{ product.id }}</td>
+
+                            <td class="text-center align-middle">
+                                <i class="fa-solid fa-square-minus"
+                                    (click)='this._dataTransfer.minusQty(product.id)'></i>
+                                {{ product.qty }}
+                                <i class="fa-solid fa-square-plus" (click)='this._dataTransfer.plusQty(product.id)'></i>
+                            </td>
+                            <td class="text-center align-middle">{{ product.price * product.qty |currency:"INR":"₹" }}
+                            </td>
+                            <td class="text-center align-middle fs-1 text-danger">
+
+                                <i class="fa-solid fa-circle-xmark" (click)="onRemoveItem(product)"></i>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan='5' class="text-center fw-bold">Total</td>
+                            <td class="text-center fw-bold">{{ this._dataTransfer.grandTotal() |currency:"INR":"₹"}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan='5' class="text-center fw-bold">Discount(10%)</td>
+                            <td class="text-center fw-bold">{{ -this._dataTransfer.grandTotal() *0.1
+                                |currency:"INR":"₹"}}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan='5' class="text-center fw-bold">GST(18%)</td>
+                            <td class="text-center fw-bold">{{ this._dataTransfer.grandTotal()*0.18*0.90
+                                |currency:"INR":"₹"}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan='5' class="text-center"> <h1 class="fw-bold"> Grand Total</h1></td>
+                            <td class="text-center"> <h1 class="fw-bold">{{ this._dataTransfer.grandTotal() *0.9*1.18
+                                |currency:"INR":"₹"}}</h1> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="proceedtopay">
+                <button class="btn btn-success my-5" (click)="proceedToBillings() "> Proceed To Pay</button>|
+                <button class="btn btn-success my-5" (click)="showAllBill()"> Show Overall </button>
+            </div>
+        </section>
+    </ng-template>
+
+
+     <ng-template [ngIf]="this._dataTransfer.showAllBillEnable==true">
+
+
+        <section>
+
+            <table class="table table-success table-hover table-striped">
+
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <h1 class="text-center fw-bold"> OVERALL BILL AMOUNT</h1>
+                        </th>
+                    </tr>
+                    <tr>
+
+                        <th class="text-center">S.NO</th>
+                        <th>BILL ID</th>
+                        <th>BILL DATE</th>
+                        <th>BILL TIME </th>
+                        <th>BILL TOTAL</th>
+                        <th>BILL DISCOUNT</th>
+                        <th>BILL GST</th>
+                        <th>BILL GRAND </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let billSingle of this._dataTransfer.overAllBills;index as i;">
+                        <td class="w-10 text-center">{{ i+1 }}</td>
+                        <td class="w-20 text-start">{{ billSingle.id }}</td>
+                        <td class="w-20 text-start ">{{ billSingle.billDate }}</td>
+                        <td class="w-20 text-start ">{{ billSingle.billTime }}</td>
+
+                        <td class="w-10 text-start">{{ billSingle.billtotal |currency:"INR":"₹" }}</td>
+                        <td class="w-20 text-start">{{ billSingle.billdiscount |currency:"INR":"₹" }}</td>
+                        <td class="w-10 text-start">{{ billSingle.billgst |currency:"INR":"₹" }}</td>
+                        <td class="w-10 text-start">{{ billSingle.billgrand |currency:"INR":"₹" }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-end"> <h1 class="fw-bold">OVERALL AMOUNT :</h1> </td>
+                        <td colspan="2"><h1 class="fw-bold ">{{ this._dataTransfer.overAllBillAmount() |currency:"INR":"₹" }}</h1> 
+                        </td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+        </section>
+
+    </ng-template> 
+
+
+
+
+</div>

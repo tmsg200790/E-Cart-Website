@@ -1,0 +1,56 @@
+<h1>Food Order </h1>
+<section>
+    <mat-form-field class="example-chip-list" appearance="fill">
+        <mat-label>Ordered Foods</mat-label>
+        <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                {{fruit}}
+                <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip>
+            <input placeholder="New item..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+                [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                {{fruit}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</section>
+
+<!-- <section>
+    <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+        <mat-chip *ngFor="let chip of availableColors" selected [color]="chip.color">
+          {{chip.name}}
+        </mat-chip>
+      </mat-chip-list>
+      
+</section>
+
+
+<section>
+    <mat-chip-list aria-label="Dog selection">
+        <mat-chip>
+          <mat-chip-avatar>
+              <img src="../../assets/Images/flower.jpg" alt="Flower"/>
+          </mat-chip-avatar>
+          flower one
+        </mat-chip>
+        <mat-chip color="primary">
+          <mat-chip-avatar>
+            <img src="../../assets/Images/flower.jpg" alt="Flower"/>
+          </mat-chip-avatar>
+          flower two
+        </mat-chip>
+        <mat-chip color="accent">
+          <mat-chip-avatar>
+            <img src="../../assets/Images/flower.jpg" alt="Flower"/>
+          </mat-chip-avatar>
+          flower three
+        </mat-chip>
+      </mat-chip-list>
+      
+</section> -->
